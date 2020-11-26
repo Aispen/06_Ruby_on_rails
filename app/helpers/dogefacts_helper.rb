@@ -1,0 +1,2 @@
+module DogefactsHelper
+end

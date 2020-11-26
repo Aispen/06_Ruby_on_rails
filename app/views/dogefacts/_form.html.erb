@@ -1,0 +1,22 @@
+<%= form_with(model: dogefact, local: true) do |form| %>
+  <% if dogefact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dogefact.errors.count, "error") %> prohibited this dogefact from being saved:</h2>
+
+      <ul>
+        <% dogefact.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :context %>
+    <%= form.text_area :context %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

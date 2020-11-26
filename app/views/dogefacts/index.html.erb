@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<div class="center hero-unit">
+
+<h3>Dogefacts DB</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Context for each DogeFact in DB</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dogefacts.each do |dogefact| %>
+      <tr>
+        <td><%= dogefact.context %></td>
+        <td><%= link_to 'Show', dogefact %></td>
+        <td><%= link_to 'Edit', edit_dogefact_path(dogefact) %></td>
+        <td><%= link_to 'Destroy', dogefact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dogefact', new_dogefact_path %>
